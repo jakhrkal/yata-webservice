@@ -1,4 +1,4 @@
-package cz.jakhrkal.testing.webservice.library.model.data
+package cz.jakhrkal.testing.webservice.yata.model.data
 
 import java.time.LocalDateTime
 import javax.persistence.*
@@ -8,19 +8,19 @@ import javax.xml.bind.annotation.XmlType
 @Entity
 @XmlType
 @XmlAccessorType
-data class Book(
+data class Task(
         var title: String,
-        var subtitle: String,
-        var publishYear: Int,
-        @ManyToOne @JoinColumn var author: Author,
+        var description: String,
+        var finishBy: LocalDateTime,
+        @ManyToOne @JoinColumn var user: User,
         @Id @GeneratedValue var id: Long? = null,
-        var addedAt: LocalDateTime = LocalDateTime.now())
+        var createdOn: LocalDateTime = LocalDateTime.now())
 
 @Entity
 @XmlType
 @XmlAccessorType
-data class Author(
+data class User(
         var firstName: String,
         var lastName: String,
-        var description: String? = null,
+        var email: String? = null,
         @Id @GeneratedValue var id: Long? = null)

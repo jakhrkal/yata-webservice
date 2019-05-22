@@ -1,6 +1,6 @@
-package cz.jakhrkal.testing.webservice.library.controller.soap
+package cz.jakhrkal.testing.webservice.yata.controller.soap
 
-import cz.jakhrkal.testing.webservice.library.model.service.BookService
+import cz.jakhrkal.testing.webservice.yata.model.service.TodoAppService
 import org.apache.cxf.Bus
 import org.apache.cxf.jaxws.EndpointImpl
 import org.springframework.beans.factory.annotation.Autowired
@@ -17,11 +17,11 @@ class WebServiceConfig {
     private val bus: Bus? = null
 
     @Autowired
-    private val bookService: BookService? = null
+    private val todoAppService: TodoAppService? = null
 
     @Bean
     fun endpoint(): Endpoint {
-        val endpoint = EndpointImpl(bus, LibrarySoapServiceImpl(bookService!!))
+        val endpoint = EndpointImpl(bus, TodoAppSoapServiceImpl(todoAppService!!))
         endpoint.publish("/api/soap")
         return endpoint
     }
