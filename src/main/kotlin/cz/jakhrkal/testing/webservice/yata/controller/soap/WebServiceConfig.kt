@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration
 import javax.xml.ws.Endpoint
 
 //    http://localhost:8080/services/api/soap?WSDL
+// todo name the service
 
 @Configuration
 class WebServiceConfig {

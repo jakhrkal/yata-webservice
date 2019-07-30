@@ -14,4 +14,14 @@ interface TodoAppService {
 
     fun findUserById(id: Long) : Optional<User>
 
+    fun findTasksByUser(id: Long): List<Task>
+
+    fun updateTask(task: Task): Task
+
+    fun updateUser(user: User): User
+
+    fun deleteTaskById(id: Long)
+    
+    fun deleteUserById(id: Long)
+
 }

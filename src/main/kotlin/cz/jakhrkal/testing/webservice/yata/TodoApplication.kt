@@ -3,7 +3,6 @@ package cz.jakhrkal.testing.webservice.yata
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
-
 @SpringBootApplication
 class TodoApplication
 
